@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Old Stairwell 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130313
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="google-site-verification" content="TKhkDFKyhvcrubOqVQVf7xQG4bUSzAuJlXiN4_Ts7yQ" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karlsruhe High Quality Partitioning</title>
+<meta name="keywords" content="graph partitioning, multilevel algorithm, multilevel graph partitioning, open source, kahip, algorithm, software, ordering, fill-reducing ordering, nested disection, partitioning, mesh partitioning, parallel simulations, dynamic load-balancing, domain decomposition, data mining, schulz, sanders, clustering, graph clustering, label propagation, max flow, min cut" />
+<meta name="description" content="The main project page of to open source graph partitioning framework KaHIP -- Karlsruhe High Quality Partitioning" />
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">KaHIP - </a><a href="#" style="color:red">Ka</a><a href="#">rlsruhe </a> <a href="#" style="color:red">Hi</a><a href="#">gh Quality</a> <a href="#" style="color:red">P</a><a href="#">artitioning</a></h1>
+		</div>
+	</div>
+	<div id="page">
+		<div id="content">
+                
+			<!--<h2><a href="#" style="color:red">Due to typo on DMANET: </a><br></h2><h2>Link to <a href="http://algo2.iti.kit.edu/kamis/">KaMIS -- Karlsruhe Maximum Independent Sets</a></h2>-->
+
+                         
+			<h2>Overview</h2>
+                        The graph partitioning problem asks for a division of a graph's node set into k equally sized blocks such that the number of edges that run between the blocks is minimized. An example graph that is partitioned into four blocks: <br><br>
+<p><img alt="A mesh around an airfoil." src="images/airfoil1.png" width=300 alt="A graph that is partitioned into four blocks."></p>
+<br> 
+                        KaHIP - <a href="#" style="color:red">Ka</a>rlsruhe <a href="#" style="color:red">Hi</a>gh Quality <a href="#" style="color:red">P</a>artitioning - is a family of graph partitioning programs. It includes KaFFPa (Karlsruhe Fast Flow Partitioner), which is a multilevel graph partitioning algorithm, in its variants Strong, Eco and Fast, KaFFPaE (KaFFPaEvolutionary) which is a parallel evolutionary algorithm that uses KaFFPa to provide combine and mutation operations, as well as KaBaPE which extends the evolutionary algorithm.
+                        Moreover, specialized techniques are included to partition road networks (Buffoon), to output a vertex separator from a given partition or techniques geared towards efficient partitioning of social networks.
+
+                     <br><br>
+
+<b style="color:black">Project Contributors:</b>   Yaroslav Akhremtsev, Roland Glantz, Henning Meyerhenke, Ilya Safro, Peter Sanders, Sebastian Schlag, Christian Schulz, Daniel Seemaier, Darren Strash, Jesper Larsson Träff    <br><br>
+
+<b style="color:red">New in KaHIPv2.1:</b>       <br>
+<ul>
+<li><i>ParHIP (Parallel High Quality Partitioning):</i> Our distributed memory parallel partitioning techniques designed to partition hierarchically structured networks such as web graphs or social networks.
+<li><i>Mapping Algorithms:</i> Our new algorithms to map the blocks onto processors to minimize overall communication time based on hierarchical partitionings of the task graph and fast local search algorithms.
+<li><i>Edge Partitioning Algorithms:</i> Our new algorithms to compute edge partitionings of graphs. 
+</ul>
+                        <br>
+
+<b style="color:red">News:</b>       <br>
+<b>2nd May 2020:</b> Released mt-KaHIP which is a shared-memory parallel version of KaHIP due to Yaroslav Akhremtsev. <br>
+<b>3rd January 2019:</b> Released KaHIP v2.1 which now includes <i style="color:red">edge partitioning algorithms</i> and <i style="color:red">64bit edge support</i>. Moreover, we switched to <b style="color:red">MIT licence</b>. <br>
+
+<b>1st March 2017:</b> Released KaHIP v2.00 which now includes ParHIP, i.e. distributed memory parallel codes to partition hierarchically structured networks such as web graphs or social networks, and mapping algorithms that map task graphs (quotient graphs) onto processor graphs. <br>
+<b>29th April 2016:</b> Released KaHIP v1.00 which now includes improved codes for the node separator problem based on max-flow min-cut computations as well as locallized local search.<br> 
+<b>5th October 2015:</b> Released KaHIP v0.73 which now includes an example program to link and call the library.<br> 
+<!--<b>21st September 2015:</b> Released KaHIP v0.72 which now contains better exhaustion of larger imbalance values.<br> -->
+<b>3rd January 2015:</b> Included example wrapper to link the KaHIP library within Java projects.<br> 
+<b>22nd November 2014:</b> We released KaHIP v0.7 which includes the possibility to balance edges among blocks and integrates our own max-flow min-cut implementations. Balancing edges among blocks is in particular important for graph processing frameworks or parallel matrix vector multiplications.<br>
+<b>13rd June 2014:</b> We added huge weighted <i>max-flow min-cut instances</i> from multilevel graph partitioning which may be used for benchmarking max-flow min-cut algorithms. <br> 
+<!--<b>19nd Mai 2014:</b> We released a minor update of KaHIP (v0.62), e.g. we updated the perfectly balanced case in KaFFPa and the possibility to specify the name of the output partition file</a>. <br> -->
+<b>22nd April 2014:</b> We released a technical report on parallel graph partitioning for complex networks. For example, we can obtain a high quality partition of uk-2007, which has 3.3 billion edges, in roughly 16 seconds. The report can be found <a href="http://arxiv.org/abs/1404.4797">here</a>. The code will also be released within the project -- stay tuned!<br> 
+<b>22nd April 2014:</b> We released a technical report on (semi-)external graph partitioning. The report can be found <a href="http://arxiv.org/abs/1404.4887">here</a>. <br> 
+<b>3rd March 2014:</b> We added huge <i>max-flow min-cut instances</i> created with our partitioning framework. The max-flow min-cut instances stem from the local search algorithms within KaFFPa that are used to improve a bipartition of the graph. They contain up to 2.6 billion edges and can be found in the miscellaneous section.  <br> 
+<!--<b>19th February 2014:</b> We now integrated the size-constrained label propagation clustering algorithm as an alone standing program. <br> -->
+<b>14th February 2014:</b> Version 0.6 is out! We integrated improved algorithms for social networks and web graphs. The algorithms integrated are from the paper "Partitioning Complex Networks via Size-constrained Clustering" (see below).<br> <br>
+ For regular project updates follow us on <a href="https://twitter.com/#!/ProjectKaHIP">Twitter</a>. <br>
+
+
+ 
+                        <p></p>
+                        <br>
+
+			<h2>Licence</h2>
+                        The program is licenced under MIT licence.<br>
+                        If you publish results using our algorithms, <b>please acknowledge</b> our work by quoting the following paper:
+
+<pre class="verbatim select-on-click">
+@inproceedings{DBLP:conf/wea/SandersS13,
+  author    = {Peter Sanders and
+               Christian Schulz},
+  title     = {Think Locally, Act Globally: Highly Balanced Graph Partitioning},
+  booktitle = {Experimental Algorithms, 12th International Symposium, {SEA} 2013,
+               Rome, Italy, June 5-7, 2013. Proceedings},
+  pages     = {164--175},
+  year      = {2013},
+  volume    = {7933},
+  publisher = {Springer},
+  year      = {2013}
+}
+</pre>
+
+If you use our parallel partitioner ParHIP please also cite the following paper (<a href="http://arxiv.org/pdf/1404.4797.pdf">PDF</a>):
+<pre class="verbatim select-on-click">
+@article{DBLP:journals/tpds/MeyerhenkeSS17,
+  author    = {Henning Meyerhenke and
+               Peter Sanders and
+               Christian Schulz},
+  title     = {Parallel Graph Partitioning for Complex Networks},
+  journal   = {{IEEE} Trans. Parallel Distrib. Syst.},
+  volume    = {28},
+  number    = {9},
+  pages     = {2625--2638},
+  year      = {2017},
+  url       = {https://doi.org/10.1109/TPDS.2017.2671868},
+  doi       = {10.1109/TPDS.2017.2671868},
+  timestamp = {Fri, 27 Dec 2019 21:15:41 +0100},
+  biburl    = {https://dblp.org/rec/journals/tpds/MeyerhenkeSS17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+} </pre>
+
+If you use mapping algorithm please also cite the following paper (<a href="http://arxiv.org/pdf/1702.04164.pdf">PDF</a>):
+<pre class="verbatim select-on-click">
+@inproceedings{DBLP:conf/wea/SchulzT17,
+  author    = {Christian Schulz and
+               Jesper Larsson Tr{\"{a}}ff},
+  title     = {Better Process Mapping and Sparse Quadratic Assignment},
+  booktitle = {16th International Symposium on Experimental Algorithms, {SEA}},
+  pages     = {4:1--4:15},
+  year      = {2017},
+  series    = {LIPIcs},
+  volume    = {75},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  crossref  = {DBLP:conf/wea/2017},
+  url       = {https://doi.org/10.4230/LIPIcs.SEA.2017.4},
+  doi       = {10.4230/LIPIcs.SEA.2017.4},
+  timestamp = {Tue, 11 Feb 2020 15:52:14 +0100},
+  biburl    = {https://dblp.org/rec/conf/wea/SchulzT17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}</pre>
+
+If you use edge partitioning algorithms please also cite the following paper (<a href="https://arxiv.org/pdf/1808.06411.pdf">PDF</a>):
+<pre class="verbatim select-on-click">
+@inproceedings{DBLP:conf/alenex/Schlag0SS19,
+  author    = {Sebastian Schlag and
+               Christian Schulz and
+               Daniel Seemaier and
+               Darren Strash},
+  title     = {Scalable Edge Partitioning},
+  booktitle = {Proceedings of the Twenty-First Workshop on Algorithm Engineering and Experiments, {ALENEX}},
+  pages     = {211--225},
+  publisher = {{SIAM}},
+  year      = {2019},
+  doi       = {10.1137/1.9781611975499.17}
+}</pre>
+
+
+If you use mt-KaHIP (shared-memory parallel version) please also cite the following paper (<a href="https://arxiv.org/pdf/1808.06411.pdf">PDF</a>):
+<pre class="verbatim select-on-click">
+@inproceedings{DBLP:conf/europar/Akhremtsev0018,
+  author    = {Yaroslav Akhremtsev and
+               Peter Sanders and
+               Christian Schulz},
+  title     = {High-Quality Shared-Memory Graph Partitioning},
+  booktitle = {24th International Conference on Parallel and Distributed Computing},
+  pages     = {659--671},
+  year      = {2018},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11014},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-319-96983-1\_47}
+}</pre>
+
+
+
+The algorithms that are included for download are mainly based on the following publications: <br> <br>
+<ul>
+<li>Peter Sanders and Christian Schulz.  Engineering Multilevel Graph Partitioning Algorithms. In Proceedings of the 19th European Symposium on Algorithms (ESA'11), volume 6942 of LNCS, pages 469--480. Springer, 2011. <a href="http://algo2.iti.kit.edu/documents/kahip/engineering_multilevel.pdf">Download PDF</a>.<br> <br>
+
+<li> Peter Sanders and Christian Schulz. Distributed Evolutionary Graph Partitioning.  In Proceedings of the 12th Workshop on Algorithm Engineering and Experimentation (ALENEX'12), pages 16--19, 2012. <a href="http://siam.omnibooksonline.com/2012ALENEX/data/papers/014.pdf#page=1">Download PDF</a>.<br><br>
+
+<li> Peter Sanders and Christian Schulz.  High Quality Graph Partitioning.  In Proceedings of the 10th DIMACS Implementation Challenge Workshop: Graph Partitioning and Graph Clustering, pages 1--17, AMS, 2013. <a href="http://www.cc.gatech.edu/dimacs10/papers/%5B01%5D-high_quality_graph_partitioning_final.pdf">Download PDF</a>.<br><br>
+
+<li> Peter Sanders and Christian Schulz.  Think Locally, Act Globally: Highly Balanced Graph Partitioning.  In Proceedings of the 12th International Symposium on Experimental Algorithms (SEA'13), volume 7933 of LNCS, pages 164--175, 2013. <a href="http://algo2.iti.kit.edu/documents/kahip/highly_balanced.pdf">Download PDF</a>.<br><br>
+
+<li> Christian Schulz.  High Quality Graph Partitioning. PhD thesis. Karlsruhe Institute of Technology, 2013. <br>ISBN  978-3844264623, epubli GmbH. <a href="http://algo2.iti.kit.edu/schulz/dissertation_christian_schulz.pdf">Download PDF</a>.<br><br>
+<li> Roland Glantz and Henning Meyerhenke and Christian Schulz.  Tree-based Coarsening and Partitioning of Complex Networks.   In Proceedings of the 13th Symposium on Experimental Algorithms (SEA’14), volume 8504 of Lecture Notes in Computer Science, pages 364--375. Springer, 2014. <a href="http://arxiv.org/pdf/1402.2782.pdf">Download PDF</a>.<br><br>
+
+<li> Henning Meyerhenke and Peter Sanders and Christian Schulz.  Partitioning of Complex Networks via Size-constrained Clustering.  In Proceedings of the 13th Symposium on Experimental Algorithms (SEA’14), volume 8504 of Lecture Notes in Computer Science, pages 351--363. Springer, 2014. <a href="http://arxiv.org/pdf/1402.3281.pdf">Download PDF</a>.<br><br>
+
+<li> Yaroslav Akhremtsev and Peter Sanders and Christian Schulz.  (Semi-)External Algorithms for Graph Partitioning and Clustering.   In Proceedings of the 15th Workshop on Algorithm Engineering and Experimentation (ALENEX'15), pages 33--43, 2015. <a href="http://arxiv.org/pdf/1404.4887.pdf">Download PDF</a>.<br><br>
+
+<li> Henning Meyerhenke and Peter Sanders and Christian Schulz.  Parallel Graph Partitioning for Complex Networks.  In 29th IEEE International Parallel and Distributed Processing Symposium (IPDPS'15), 2015.  <a href="http://arxiv.org/pdf/1404.4797.pdf">Download PDF</a>.<br><br>
+
+<li> Peter Sanders and Christian Schulz.  Advanced Multilevel Node Separator Algorithms.  In Proceedings of the 15th International Symposium on Experimental Algorithms (SEA'13), 2016.  <a href="http://arxiv.org/pdf/1509.01190.pdf">Download PDF</a>.<br><br>
+
+<li> Christian Schulz and Jepser Larsson Träff.  Better Process Mapping and Sparse Quadratic Assignment. In Proceedings of the 15th International Symposium on Experimental Algorithms (SEA'17), 2017.  <a href="http://arxiv.org/pdf/1702.04164.pdf">Download PDF</a>.<br><br>
+
+<li> Sebastian Schlag, Christian Schulz, Daniel Seemaier and Darren Strash.  Scalable Edge Partitioning.  Proceedings of the 12th Workshop on Algorithm Engineering and Experimentation (ALENEX'19), 2019.  <a href="http://arxiv.org/pdf/1808.06411.pdf">Download PDF</a>.<br><br>
+
+<li> Yaroslav Akhremtsev, Peter Sanders and Christian Schulz. High-Quality Shared-Memory Graph Partitioning.  
+ In  Proceedings of the 24th International European Conference on Parallel Computing (Euro-Par), volume 11014 of LNCS, pages 659--671, 2018. <a href="https://arxiv.org/pdf/1710.08231.pdf"> Download PDF </a> </li>
+
+<br><br>
+
+
+
+</ul>
+                        <p></p>
+			<h2>Download</h2> 
+                        <ul>
+                                <!--<li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/KaHIP_1.00.tar.gz">KaHIP_1.00.tar.gz</a> (or available on GitHub <a href="https://github.com/schulzchristian/KaHIP/">here</a>) -->
+                                <li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/KaHIP_2.12.tar.gz">KaHIP_2.12.tar.gz</a> (or available on GitHub <a href="https://github.com/schulzchristian/KaHIP/">here</a>) 
+                                <li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/kahipv2.10.pdf">User Guide to KaHIP v2.10</a> 
+                                <li> Note: this release does NOT contain natural cuts due to an US software patent. If you want to use specialized techniques for road networks, e.g. Buffoon, please send us an <a href="mailto:christian.schulz@univie.ac.at?subject=BuffoonRequest">email</a>. 
+                                <li> Shared-memory parallel version Mt-KaHIP (due to Yaroslav Akhremtsev): <a href="http://algo2.iti.kit.edu/schulz/software_releases/mt-KaHIP.tar.gz">mt-KaHIP.tar.gz</a>
+
+
+                                <img alt="build status" src="https://travis-ci.org/schulzchristian/KaHIP.svg?branch=master"/>
+                        </ul>
+
+			<h2>Support</h2>
+                        <ul>
+                                <li> Write us an <a href="mailto:christian.schulz@univie.ac.at?subject=SupportRequest">email</a> if you need support!  
+                                <li>We are glad for any comments and error reports (or even bug fixes or feature requests) that you send us. 
+                                <li>Graphs used in our papers will be provided to you on request!
+                                </ul>
+                                
+			<h2>Miscellaneous</h2>
+                        <ul>
+                                <li>Large flow networks used to improve a given bipartition of the graph which contain up to 2.6 billion edges:
+                                <ul>
+                                <li> Based on Delaunay Graphs: <a href="http://algo2.iti.kit.edu/schulz/flow_networks/del_flow_networks.tar.gz">del_flow_networks.tar.gz </a> (11GB)
+                                <li> Based on Grid Graphs: <a href="http://algo2.iti.kit.edu/schulz/flow_networks/grid_flow_networks.tar.gz">grid_flow_networks.tar.gz </a> (22GB)
+                                <li> Based on Random Geometric Graphs: <a href="http://algo2.iti.kit.edu/schulz/flow_networks/rgg_flow_networks.tar.gz">rgg_flow_networks.tar.gz </a> (6.8GB)
+
+                                <li> Based on Other Graphs (Road Networks, Scientific Computing, ...): <a href="http://algo2.iti.kit.edu/schulz/flow_networks/other_flow_networks.tar.gz">other_flow_networks.tar.gz</a> (1.7GB)
+                                <li> Weigthed Flow Networks From Multilevel Graph Partitioning based on Various Graphs  <a href="http://algo2.iti.kit.edu/schulz/flow_networks/directed_flownetworks.tar.gz">weighted_flownetworks.tar.gz</a> (16GB)
+                                
+
+</a>
+</ul>
+</ul>
+
+			<h2>Other Open Source Frameworks</h2>
+                        <ul>
+                                <li> <a href="http://algo2.iti.kit.edu/kamis">KaMIS</a> -- Karlsruhe Maximum Independent Sets 
+                                <li> <a href="http://algo2.iti.kit.edu/kalp">KaLP</a> -- Karlsruhe Longest Paths 
+                                <li> <a href="http://algo2.iti.kit.edu/kadraw">KaDraw</a> -- Karlsruhe Graph Drawing 
+                                <li> <a href="http://viem.taa.univie.ac.at">VieM</a> -- Vienna Mapping and Sparse Quadratic Assignment 
+                                <li> <a href="http://vieclus.taa.univie.ac.at">VieClus</a> -- Vienna Graph Clustering
+                                <li> <a href="https://github.com/sebalamm/KaGen/"> KaGen </a> -- Karlsruhe Graph Generation
+                                <li> <a href="https://github.com/kahypar/kahypar"> KaHyPar </a> -- Karlsruhe Hypergraph Partitioning
+
+
+	        </div>
+
+        </div>
+	<div id="footer">
+		<p>Copyright (c) 2013-2015. Site maintained by Christian Schulz. All rights reserved. Initial release of KaHIP: 23. Mai 2013. See main site for impressum. Design by <a href="http://www.freecsstemplates.org">FCT</a>.</p>
+	</div>
+</div>
+</body>
+</html>
