@@ -49,7 +49,16 @@ Released   : 20130313
 
 <b style="color:black">Project Contributors:</b>   Yaroslav Akhremtsev, Roland Glantz, Henning Meyerhenke, Ilya Safro, Peter Sanders, Sebastian Schlag, Christian Schulz, Daniel Seemaier, Darren Strash, Jesper Larsson Träff    <br><br>
 
-<b style="color:red">New in KaHIPv2.1:</b>       <br>
+<b style="color:red">New in KaHIPv3.0:</b>       <br>
+<ul>
+<li><i>Node Ordering Algorithms:</i>  Many applications rely on time-intensive matrix operations, such as factorization, which can be sped up significantly for large sparse matrices by interpreting the matrix as a sparse graph and computing a node ordering that minimizes the so-called fill-in. Here, we added new algorithms to compute fill-in reduced orderings in graphs.
+<li><i> ILPs For Even Higher Quality:</i>  ILPs typically don't scale to large instances. We adapt them to heuristically improve a given partition. We do so by defining a much smaller model that allows us to use symmetry breaking and other techniques that make the approach scalable. We include ILPs that can be used as a post-processing step to improve high-quality partitions even further. The codes are now included in KaHIP.
+<li><i>Added Support for Vertex and Edge Weights in ParHIP:</i> we extended the IO functionality of ParHIP to read weighted graphs in the METIS format. 
+<li><i>Global Multisection Mapping:</i> we added global multisection n-to-1 process mapping algorithms. This compute better process mapping for parallel applications if information about the system hierarchy/architecture is known. 
+</ul>
+                        <br>
+
+<b style="color:black">New in KaHIPv2.1:</b>       <br>
 <ul>
 <li><i>ParHIP (Parallel High Quality Partitioning):</i> Our distributed memory parallel partitioning techniques designed to partition hierarchically structured networks such as web graphs or social networks.
 <li><i>Mapping Algorithms:</i> Our new algorithms to map the blocks onto processors to minimize overall communication time based on hierarchical partitionings of the task graph and fast local search algorithms.
@@ -58,6 +67,7 @@ Released   : 20130313
                         <br>
 
 <b style="color:red">News:</b>       <br>
+<b>5nd August 2020:</b> We released KaHIP v3.0. It now includes algorithms for node orderings, ILPs to improve partitions and to solve the problem to optimality, global multisection process mapping algorithms as well as a couple of minor improvements. <br> <br>
 <b>2nd May 2020:</b> Released mt-KaHIP which is a shared-memory parallel version of KaHIP due to Yaroslav Akhremtsev. <br>
 <b>3rd January 2019:</b> Released KaHIP v2.1 which now includes <i style="color:red">edge partitioning algorithms</i> and <i style="color:red">64bit edge support</i>. Moreover, we switched to <b style="color:red">MIT licence</b>. <br>
 
@@ -80,7 +90,27 @@ Released   : 20130313
  
                         <p></p>
                         <br>
+			<h2>Download</h2> 
+                        <ul>
+                                <!--<li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/KaHIP_1.00.tar.gz">KaHIP_1.00.tar.gz</a> (or available on GitHub <a href="https://github.com/schulzchristian/KaHIP/">here</a>) -->
+                                <li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/KaHIP_2.12.tar.gz">KaHIP_2.12.tar.gz</a> (or available on GitHub <a href="https://github.com/schulzchristian/KaHIP/">here</a>) 
+                                <li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/kahipv2.10.pdf">User Guide to KaHIP v2.10</a> 
+                                <li> Note: this release does NOT contain natural cuts due to an US software patent. If you want to use specialized techniques for road networks, e.g. Buffoon, please send us an <a href="mailto:christian.schulz@univie.ac.at?subject=BuffoonRequest">email</a>. 
+                                <li> Shared-memory parallel version Mt-KaHIP (due to Yaroslav Akhremtsev): <a href="http://algo2.iti.kit.edu/schulz/software_releases/mt-KaHIP.tar.gz">mt-KaHIP.tar.gz</a>
 
+
+                                <img alt="build status" src="https://travis-ci.org/schulzchristian/KaHIP.svg?branch=master"/>
+                        </ul>
+
+			<h2>Support</h2>
+                        <ul>
+                                <li> Write us an <a href="mailto:christian.schulz@univie.ac.at?subject=SupportRequest">email</a> if you need support!  
+                                <li>We are glad for any comments and error reports (or even bug fixes or feature requests) that you send us. 
+                                <li>Graphs used in our papers will be provided to you on request!
+                                </ul>
+                                
+
+                        <br>
 			<h2>Licence</h2>
                         The program is licenced under MIT licence.<br>
                         If you publish results using our algorithms, <b>please acknowledge</b> our work by quoting the following paper:
@@ -171,6 +201,44 @@ If you use mt-KaHIP (shared-memory parallel version) please also cite the follow
   doi       = {10.1007/978-3-319-96983-1\_47}
 }</pre>
 
+If you use node ordering algorithms please also cite the following paper (<a href="https://arxiv.org/pdf/2004.11315.pdf">PDF</a>):
+<pre class="verbatim select-on-click">
+@article{DBLP:journals/corr/abs-2004-11315,
+  author    = {Wolfgang Ost and
+               Christian Schulz and
+               Darren Strash},
+  title     = {Engineering Data Reduction for Nested Dissection},
+  journal   = {CoRR},
+  volume    = {abs/2004.11315},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2004.11315},
+  archivePrefix = {arXiv},
+  eprint    = {2004.11315},
+  timestamp = {Tue, 28 Apr 2020 16:10:02 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2004-11315.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+</pre>
+
+If you use ILP algorithms to improve an partition please also cite the following paper (<a href="https://arxiv.org/pdf/1802.07144.pdf">PDF</a>):
+
+<pre class="verbatim select-on-click">
+@inproceedings{DBLP:conf/wea/HenzingerN018,
+  author    = {Alexandra Henzinger and
+               Alexander Noe and
+               Christian Schulz},
+  title     = {ILP-based Local Search for Graph Partitioning},
+  booktitle = {17th International Symposium on Experimental Algorithms, {SEA} 2018},
+  pages     = {4:1--4:15},
+  year      = {2018},
+  url       = {https://doi.org/10.4230/LIPIcs.SEA.2018.4},
+  doi       = {10.4230/LIPIcs.SEA.2018.4},
+  series    = {LIPIcs},
+  volume    = {103},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik}
+}
+</pre>
+
 
 
 The algorithms that are included for download are mainly based on the following publications: <br> <br>
@@ -199,33 +267,20 @@ The algorithms that are included for download are mainly based on the following 
 <li> Sebastian Schlag, Christian Schulz, Daniel Seemaier and Darren Strash.  Scalable Edge Partitioning.  Proceedings of the 12th Workshop on Algorithm Engineering and Experimentation (ALENEX'19), 2019.  <a href="http://arxiv.org/pdf/1808.06411.pdf">Download PDF</a>.<br><br>
 
 <li> Yaroslav Akhremtsev, Peter Sanders and Christian Schulz. High-Quality Shared-Memory Graph Partitioning.  
- In  Proceedings of the 24th International European Conference on Parallel Computing (Euro-Par), volume 11014 of LNCS, pages 659--671, 2018. <a href="https://arxiv.org/pdf/1710.08231.pdf"> Download PDF </a> </li>
+ In  Proceedings of the 24th International European Conference on Parallel Computing (Euro-Par), volume 11014 of LNCS, pages 659--671, 2018. <a href="https://arxiv.org/pdf/1710.08231.pdf"> Download PDF </a> </li><br>
 
-<br><br>
+<li>Wolfgang Ost, Christian Schulz and Darren Strash.  Engineering Data Reduction for Nested Dissection.
+Technical report, University of Vienna, Faculty of Computer Science, and Hamilton College, 2020.  <a href="https://arxiv.org/pdf/2004.11315.pdf"> Download PDF </a> <br><br>
+
+<li>Alexandra Henzinger, Alexander Noe and Christian Schulz.
+ILP-based Local Search for Graph Partitioning.
+ACM Journal of Experimental Algorithms (ACM JEA), accepted, 2020. <a href="https://arxiv.org/pdf/1802.07144.pdf"> Download PDF </a> </li>
+
+<br>
 
 
 
 </ul>
-                        <p></p>
-			<h2>Download</h2> 
-                        <ul>
-                                <!--<li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/KaHIP_1.00.tar.gz">KaHIP_1.00.tar.gz</a> (or available on GitHub <a href="https://github.com/schulzchristian/KaHIP/">here</a>) -->
-                                <li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/KaHIP_2.12.tar.gz">KaHIP_2.12.tar.gz</a> (or available on GitHub <a href="https://github.com/schulzchristian/KaHIP/">here</a>) 
-                                <li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/kahipv2.10.pdf">User Guide to KaHIP v2.10</a> 
-                                <li> Note: this release does NOT contain natural cuts due to an US software patent. If you want to use specialized techniques for road networks, e.g. Buffoon, please send us an <a href="mailto:christian.schulz@univie.ac.at?subject=BuffoonRequest">email</a>. 
-                                <li> Shared-memory parallel version Mt-KaHIP (due to Yaroslav Akhremtsev): <a href="http://algo2.iti.kit.edu/schulz/software_releases/mt-KaHIP.tar.gz">mt-KaHIP.tar.gz</a>
-
-
-                                <img alt="build status" src="https://travis-ci.org/schulzchristian/KaHIP.svg?branch=master"/>
-                        </ul>
-
-			<h2>Support</h2>
-                        <ul>
-                                <li> Write us an <a href="mailto:christian.schulz@univie.ac.at?subject=SupportRequest">email</a> if you need support!  
-                                <li>We are glad for any comments and error reports (or even bug fixes or feature requests) that you send us. 
-                                <li>Graphs used in our papers will be provided to you on request!
-                                </ul>
-                                
 			<h2>Miscellaneous</h2>
                         <ul>
                                 <li>Large flow networks used to improve a given bipartition of the graph which contain up to 2.6 billion edges:
