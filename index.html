@@ -49,8 +49,9 @@ Released   : 20130313
 
 <b style="color:black">Project Contributors:</b>   Yaroslav Akhremtsev, Roland Glantz, Alexandra Henzinger, Henning Meyerhenke, Alexander Noe, Wolfgang Ost, Ilya Safro, Peter Sanders, Sebastian Schlag, Christian Schulz, Daniel Seemaier, Darren Strash, Jesper Larsson Träff    <br><br>
 
-<b style="color:red">New in KaHIPv3.0 (August 2020):</b>       <br>
+<b style="color:red">New in KaHIPv3.10 (December 2020):</b>       <br>
 <ul>
+<li><i>Support for Python:</i> The framework now builds a Python module that you can load in your Python programs to partition graphs. 
 <li><i>Node Ordering Algorithms:</i>  Many applications rely on time-intensive matrix operations, such as factorization, which can be sped up significantly for large sparse matrices by interpreting the matrix as a sparse graph and computing a node ordering that minimizes the so-called fill-in. Here, we added new algorithms to compute fill-in reduced orderings in graphs.
 <li><i> ILPs For Even Higher Quality:</i>  ILPs typically don't scale to large instances. We adapt them to heuristically improve a given partition. We do so by defining a much smaller model that allows us to use symmetry breaking and other techniques that make the approach scalable. We include ILPs that can be used as a post-processing step to improve high-quality partitions even further. The codes are now included in KaHIP.
 <li><i>Added Support for Vertex and Edge Weights in ParHIP:</i> we extended the IO functionality of ParHIP to read weighted graphs in the METIS format. 
@@ -58,7 +59,7 @@ Released   : 20130313
 </ul>
                         <br>
 
-<b style="color:black">New in KaHIPv2.1:</b>       <br>
+<b style="color:black">New in KaHIPv2.10:</b>       <br>
 <ul>
 <li><i>ParHIP (Parallel High Quality Partitioning):</i> Our distributed memory parallel partitioning techniques designed to partition hierarchically structured networks such as web graphs or social networks.
 <li><i>Mapping Algorithms:</i> Our new algorithms to map the blocks onto processors to minimize overall communication time based on hierarchical partitionings of the task graph and fast local search algorithms.
@@ -67,7 +68,8 @@ Released   : 20130313
                         <br>
 
 <b style="color:red">News:</b>       <br>
-<b>5nd August 2020:</b> We released KaHIP v3.0. It now includes algorithms for node orderings, ILPs to improve partitions and to solve the problem to optimality, global multisection process mapping algorithms as well as a couple of minor improvements. <br> <br>
+<b>4nd December 2020:</b> We released KaHIP v3.10. It now includes a Python module to use our partitioning algorithms within Python. <br> <br>
+<b>5nd August 2020:</b> We released KaHIP v3.0. It now includes algorithms for node orderings, ILPs to improve partitions and to solve the problem to optimality, global multisection process mapping algorithms as well as a couple of minor improvements. <br>
 <b>2nd May 2020:</b> Released mt-KaHIP which is a shared-memory parallel version of KaHIP due to Yaroslav Akhremtsev. <br>
 <b>3rd January 2019:</b> Released KaHIP v2.1 which now includes <i style="color:red">edge partitioning algorithms</i> and <i style="color:red">64bit edge support</i>. Moreover, we switched to <b style="color:red">MIT licence</b>. <br>
 
@@ -93,10 +95,10 @@ Released   : 20130313
 			<h2>Download</h2> 
                         <ul>
                                 <!--<li> <a href="http://algo2.iti.kit.edu/schulz/software_releases/KaHIP_1.00.tar.gz">KaHIP_1.00.tar.gz</a> (or available on GitHub <a href="https://github.com/schulzchristian/KaHIP/">here</a>) -->
-                                <li> <a href="https://github.com/KaHIP/KaHIP/archive/v3.00.tar.gz">KaHIP_3.00.tar.gz</a> (or available on GitHub <a href="https://github.com/KaHIP/">here</a>) 
+                                <li> <a href="https://github.com/KaHIP/KaHIP/archive/v3.10.tar.gz">KaHIP_3.10.tar.gz</a> (or available on GitHub <a href="https://github.com/KaHIP/">here</a>) 
                                 <li> <a href="https://github.com/KaHIP/KaHIP/raw/master/manual/kahip.pdf">User Guide to KaHIP v3.00</a> 
                                 <li> Note: this release does NOT contain natural cuts due to an US software patent. If you want to use specialized techniques for road networks, e.g. Buffoon, please send us an <a href="mailto:christian.schulz@univie.ac.at?subject=BuffoonRequest">email</a>. 
-                                <li> Shared-memory parallel version Mt-KaHIP (due to Yaroslav Akhremtsev): <a href="http://algo2.iti.kit.edu/schulz/software_releases/mt-KaHIP.tar.gz">mt-KaHIP.tar.gz</a>
+                                <li> Shared-memory parallel version Mt-KaHIP (due to Yaroslav Akhremtsev): <a href="https://github.com/KaHIP/mt-KaHIP/archive/v1.0.tar.gz">mt-KaHIP.tar.gz</a>
 
 
                                 <img alt="build status" src="https://travis-ci.org/schulzchristian/KaHIP.svg?branch=master"/>
